@@ -11,6 +11,7 @@
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "lint": "tsc && eslint . --ext .ts",
+    "release": "pnpm run build && changeset publish",
     "test": "vitest"
   },
   "dependencies": {
