@@ -1,12 +1,12 @@
 import { format as formatDate } from 'date-fns';
 
-const API_BASE_URL = 'https://data.a-boss.net/v1/';
+import { API_BASE_URL } from './constants.js';
 
 // CLIENT
 // ------
 
 export interface AbossClientConfig {
-  agencyId?: string | number;
+  agencyId?: string | number | undefined;
   artistId: string | number;
   token: string;
 }
@@ -24,6 +24,8 @@ export function createClient({ agencyId, artistId, token }: AbossClientConfig) {
     publicEvents: createPublicEventsFetcher(fetcherConfig),
   };
 }
+
+export type AbossEventsClient = ReturnType<typeof createClient>;
 
 // FETCHERS
 // --------
@@ -100,11 +102,11 @@ function createPublicEventsFetcher({ collectionUrl, token }: FetcherConfig) {
     const searchParameters = new URLSearchParams();
 
     if (from) {
-      searchParameters.set('from', formatDate(from, 'Y-M-d'));
+      searchParameters.set('from', formatDate(from, 'y-M-d'));
     }
 
     if (to) {
-      searchParameters.set('to', formatDate(to, 'Y-M-d'));
+      searchParameters.set('to', formatDate(to, 'y-M-d'));
     }
 
     const fetchOptions: FetchOptions = {

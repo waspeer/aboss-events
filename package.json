@@ -10,7 +10,11 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts",
-    "lint": "tsc && eslint . --ext .ts"
+    "lint": "tsc && eslint . --ext .ts",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "date-fns": "^3.1.0"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
@@ -19,11 +23,10 @@
     "@types/node": "20",
     "@waspeer/eslint-config": "^1.8.2",
     "eslint": "^8.56.0",
+    "msw": "^2.0.12",
     "prettier": "^3.1.1",
     "tsup": "^8.0.1",
-    "typescript": "^5.3.3"
-  },
-  "dependencies": {
-    "date-fns": "^3.1.0"
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.3"
   }
 }
