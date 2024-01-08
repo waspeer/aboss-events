@@ -5,12 +5,20 @@
   "license": "MIT",
   "author": "Wannes Salomé <mail@wannessalome.nl>",
   "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "lint": "tsc && eslint . --ext .ts"
+  },
   "devDependencies": {
     "@tsconfig/node20": "^20.1.2",
     "@tsconfig/strictest": "^2.0.2",
     "@waspeer/eslint-config": "^1.8.2",
     "eslint": "^8.56.0",
     "prettier": "^3.1.1",
+    "tsup": "^8.0.1",
     "typescript": "^5.3.3"
   }
 }
