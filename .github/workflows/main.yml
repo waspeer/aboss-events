@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    name: Lint on Node ${{ matrix.node }} and ${{ matrix.os }}
+    name: Lint and test on Node ${{ matrix.node }} and ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -32,5 +32,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Lint and build
-        run: pnpm run lint && pnpm run build
+      - name: Lint
+        run: pnpm run lint
+
+      - name: Test
+        run: pnpm run test
+
+      - name: Build
+        run: pnpm run build
