@@ -1,0 +1,12 @@
+{
+  "name": "aboss-events",
+  "version": "0.0.1",
+  "description": "Javascript client to fetch ABOSS events",
+  "license": "MIT",
+  "author": "Wannes Salomé <mail@wannessalome.nl>",
+  "devDependencies": {
+    "@tsconfig/node20": "^20.1.2",
+    "@tsconfig/strictest": "^2.0.2",
+    "typescript": "^5.3.3"
+  }
+}
