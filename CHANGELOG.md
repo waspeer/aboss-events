@@ -1,5 +1,11 @@
 # aboss-events
 
+## 1.0.1
+
+### Patch Changes
+
+- 439560f: Add readme and license
+
 ## 1.0.0
 
 ### Major Changes
