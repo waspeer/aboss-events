@@ -1,5 +1,11 @@
 # aboss-events
 
+## 1.1.0
+
+### Minor Changes
+
+- 8cb7533: Upgrade deps
+
 ## 1.0.1
 
 ### Patch Changes
