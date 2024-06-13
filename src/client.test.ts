@@ -1,10 +1,8 @@
 import { http, HttpResponse } from 'msw';
+import type { ResponseResolver } from 'msw';
 import { setupServer } from 'msw/node';
 import { afterAll, afterEach, beforeAll, expect, test } from 'vitest';
-
 import type { AbossClientConfig } from './client.js';
-import type { ResponseResolver } from 'msw';
-
 import { createClient } from './client.js';
 import { API_BASE_URL } from './constants.js';
 
@@ -113,9 +111,9 @@ function createTestClient(
     let interceptedRequest: Request;
 
     server.use(
-      http.get(/.*/, ({ request }) => {
+      http.get(/.*/, ({ request, requestId }) => {
         interceptedRequest = request;
-        return handler({ request });
+        return handler({ request, requestId });
       }),
     );
 
